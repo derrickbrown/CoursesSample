@@ -16,15 +16,15 @@ namespace CoursesAndroid
     public static class ResourceHelper
     {
 
-        private static Dictionary<string, int> cache = new Dictionary<string, int>(); 
+        private static Dictionary<string, int> _cache = new Dictionary<string, int>(); 
 
         public static int TranslateDrawable(string drawableName)
         {
             int resourceValue = -1;
 
-            if (cache.ContainsKey(drawableName))
+            if (_cache.ContainsKey(drawableName))
             {
-                return cache[drawableName];
+                return _cache[drawableName];
             }
           
 
@@ -33,7 +33,7 @@ namespace CoursesAndroid
             FieldInfo resourceFieldInfo = drawableType.GetField(drawableName);
             resourceValue = (int)resourceFieldInfo.GetValue(null);
 
-            cache.Add(drawableName, resourceValue);
+            _cache.Add(drawableName, resourceValue);
             return resourceValue;
         }
     }

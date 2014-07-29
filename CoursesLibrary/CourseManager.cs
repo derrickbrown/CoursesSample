@@ -8,13 +8,14 @@ namespace CoursesLibrary
 {
     public class CourseManager
     {
-        private readonly Course[] courses;
+        private readonly Course[] _courses;
         private int currentIndex;
+        private readonly int lastIndex;
 
         public CourseManager()
         {
-            this.courses = InitCourses();
-
+            this._courses = InitCourses();
+            lastIndex = _courses.Length - 1;
         }
 
         private Course[] InitCourses()
@@ -51,10 +52,18 @@ namespace CoursesLibrary
                     Image = "ps_top_card_04"
                 }
 
+                
             };
 
+           
             return initCourses;
         }
+
+        public int Length
+        {
+            get { return _courses.Length; }
+        }
+
 
         public void MoveFirst()
         {
@@ -69,14 +78,24 @@ namespace CoursesLibrary
 
         public void MoveNext()
         {
-
-            if (currentIndex < courses.Length - 1)
+            if (currentIndex < _courses.Length - 1)
                 ++currentIndex;
+        }
+
+        public void MoveTo(int position)
+        {
+            if(position >= 0 && position <= lastIndex)
+                currentIndex = position;
+            else
+            {
+                throw new IndexOutOfRangeException(string.Format("{0} is an invalid position", position));
+            }
+
         }
 
         public Course Current
         {
-            get { return courses[currentIndex]; }
+            get { return _courses[currentIndex]; }
         }
 
         public bool CanMovePrev 
@@ -86,7 +105,7 @@ namespace CoursesLibrary
 
         public bool CanMoveNext
         {
-            get { return currentIndex < courses.Length -1; }
+            get { return currentIndex < _courses.Length -1; }
         }
 
     }

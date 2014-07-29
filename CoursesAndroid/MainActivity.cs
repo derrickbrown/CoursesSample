@@ -10,14 +10,10 @@ using CoursesLibrary;
 
 namespace CoursesAndroid
 {
-    [Activity(Label = "Courses", MainLauncher = true, Icon = "@drawable/icon")]
+    //[Activity(Label = "Courses", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        private Button buttonPrev;
-        private Button buttonNext;
-        private TextView textTitle;
-        private ImageView imageCourse;
-        private TextView textDescription;
+    
         private CourseManager courseManager;
 
         protected override void OnCreate(Bundle bundle)
@@ -27,14 +23,7 @@ namespace CoursesAndroid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            buttonPrev = FindViewById<Button>(Resource.Id.buttonPrev);
-            buttonNext = FindViewById<Button>(Resource.Id.buttonNext);
-            textTitle = FindViewById<TextView>(Resource.Id.textTitle);
-            imageCourse = FindViewById<ImageView>(Resource.Id.imageCourse);
-            textDescription = FindViewById<TextView>(Resource.Id.textDescription);
-   
-            buttonPrev.Click += ButtonPrevOnClick;
-            buttonNext.Click += ButtonNextOnClick;
+        
 
             courseManager = new CourseManager();
             courseManager.MoveFirst();
@@ -57,12 +46,7 @@ namespace CoursesAndroid
 
         private void UpdateUI()
         {
-            textTitle.Text = courseManager.Current.Title;
-            textDescription.Text = courseManager.Current.Description;
-            imageCourse.SetImageResource(ResourceHelper.TranslateDrawable(courseManager.Current.Image));
 
-            buttonNext.Enabled = courseManager.CanMoveNext;
-            buttonPrev.Enabled = courseManager.CanMovePrev;
         }
 
     }

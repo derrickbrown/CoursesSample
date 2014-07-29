@@ -58,8 +58,17 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\Components\xamandroidsupportv4-18-20.0.0\lib\android\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>..\Components\xamandroidsupportv7appcompat-20.0.0\lib\android\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CourseActivity.cs" />
+    <Compile Include="CourseFragment.cs" />
+    <Compile Include="CoursePagerAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="ResourceHelper.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -68,6 +77,12 @@
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\layout\CourseFragment.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CourseActivity.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -90,6 +105,16 @@
       <Project>{ad019710-74cb-48f9-ac73-a0508e7860fe}</Project>
       <Name>CoursesLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="xamandroidsupportv4-18">
+      <Visible>False</Visible>
+      <Version>20.0.0</Version>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="xamandroidsupportv7appcompat">
+      <Visible>False</Visible>
+      <Version>20.0.0</Version>
+    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
