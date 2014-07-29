@@ -1,12 +1,10 @@
 // WARNING
 //
-// This file has been generated automatically by Xamarin Studio from the outlets and
-// actions declared in your storyboard file.
-// Manual changes to this file will not be maintained.
+// This file has been generated automatically by Xamarin Studio to store outlets and
+// actions made in the UI designer. If it is removed, they will be lost.
+// Manual changes to this file may not be handled correctly.
 //
-using System;
 using MonoTouch.Foundation;
-using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 
 namespace CoursesiOS
@@ -21,10 +19,40 @@ namespace CoursesiOS
 		MonoTouch.UIKit.UIButton buttonPrev { get; set; }
 
 		[Outlet]
+		MonoTouch.UIKit.UIImageView imageCourse { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UILabel labelTitle { get; set; }
 
+		[Outlet]
+		MonoTouch.UIKit.UITextView textDescription { get; set; }
+		
 		void ReleaseDesignerOutlets ()
 		{
+			if (buttonNext != null) {
+				buttonNext.Dispose ();
+				buttonNext = null;
+			}
+
+			if (buttonPrev != null) {
+				buttonPrev.Dispose ();
+				buttonPrev = null;
+			}
+
+			if (labelTitle != null) {
+				labelTitle.Dispose ();
+				labelTitle = null;
+			}
+
+			if (imageCourse != null) {
+				imageCourse.Dispose ();
+				imageCourse = null;
+			}
+
+			if (textDescription != null) {
+				textDescription.Dispose ();
+				textDescription = null;
+			}
 		}
 	}
 }
