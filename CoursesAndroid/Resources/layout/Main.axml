@@ -31,7 +31,8 @@
         android:id="@+id/textTitle"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/imageCourse"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal" />
     <TextView
         android:text="Small Text"
         android:textAppearance="?android:attr/textAppearanceSmall"

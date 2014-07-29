@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using CoursesLibrary;
 
 namespace CoursesAndroid
 {
@@ -17,6 +18,7 @@ namespace CoursesAndroid
         private TextView textTitle;
         private ImageView imageCourse;
         private TextView textDescription;
+        private CourseManager courseManager;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -30,25 +32,36 @@ namespace CoursesAndroid
             textTitle = FindViewById<TextView>(Resource.Id.textTitle);
             imageCourse = FindViewById<ImageView>(Resource.Id.imageCourse);
             textDescription = FindViewById<TextView>(Resource.Id.textDescription);
-
+   
             buttonPrev.Click += ButtonPrevOnClick;
             buttonNext.Click += ButtonNextOnClick;
+
+            courseManager = new CourseManager();
+            courseManager.MoveFirst();
+            UpdateUI();
         }
 
 
         private void ButtonPrevOnClick(object sender, EventArgs eventArgs)
         {
-            textTitle.Text = "Prev Clicked";
-            textDescription.Text = "This was a click of the previous button";
-            imageCourse.SetImageResource(Resource.Drawable.ps_top_card_01);
+            courseManager.MovePrev();
+            UpdateUI();
         }
 
         private void ButtonNextOnClick(object sender, EventArgs eventArgs)
         {
-            textTitle.Text = "Next Click";
-            textDescription.Text = "This was a click of the next button";
+            courseManager.MoveNext();
+            UpdateUI();
+          
+        }
+
+        private void UpdateUI()
+        {
+            textTitle.Text = courseManager.Current.Title;
+            textDescription.Text = courseManager.Current.Description;
             imageCourse.SetImageResource(Resource.Drawable.ps_top_card_02);
         }
+
     }
 }
 

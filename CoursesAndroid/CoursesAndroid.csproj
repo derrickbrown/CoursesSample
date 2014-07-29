@@ -74,6 +74,12 @@
     <AndroidResource Include="Resources\drawable\ps_top_card_03.png" />
     <AndroidResource Include="Resources\drawable\ps_top_card_04.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoursesLibrary\CoursesLibrary.csproj">
+      <Project>{ad019710-74cb-48f9-ac73-a0508e7860fe}</Project>
+      <Name>CoursesLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.
