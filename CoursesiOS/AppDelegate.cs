@@ -29,6 +29,7 @@ namespace CoursesiOS
 			Window = new UIWindow (UIScreen.MainScreen.Bounds);
 
 			viewController = new CourseViewController ();
+		    Window.RootViewController = viewController;
 			Window.MakeKeyAndVisible ();
 
 			return true;

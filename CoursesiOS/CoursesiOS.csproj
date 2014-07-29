@@ -87,12 +87,22 @@
     <InterfaceDefinition Include="CourseViewController.xib" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\ps_top_card_01.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ps_top_card_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ps_top_card_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ps_top_card_04.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
 </Project>

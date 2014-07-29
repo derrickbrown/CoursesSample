@@ -33,11 +33,16 @@ namespace CoursesiOS
         private void ButtonPrevOnTouchUpInside(object sender, EventArgs eventArgs)
         {
             labelTitle.Text = "Prev Clicked";
+            textDescription.Text = "The previous button has been clicked!";
+            imageCourse.Image = UIImage.FromBundle("ps_top_card_01");
+
         }
 
         void buttonNext_TouchUpInside(object sender, EventArgs e)
         {
             labelTitle.Text = "Next Clicked";
+            textDescription.Text = "The next button has been clicked!";
+            imageCourse.Image = UIImage.FromBundle("ps_top_card_02");
         }
 
 	}
