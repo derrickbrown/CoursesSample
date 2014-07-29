@@ -80,6 +80,10 @@
     <Compile Include="CourseViewController.designer.cs">
       <DependentUpon>CourseViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="CoursesViewController.cs" />
+    <Compile Include="CoursesViewController.designer.cs">
+      <DependentUpon>CoursesViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
