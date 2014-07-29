@@ -22,7 +22,7 @@
 	<array>
 		<integer>1</integer>
 	</array>
-	<key>NSMainNibFile</key>
-	<string>CourseViewController</string>
+	<key>UIMainStoryboardFile</key>
+	<string>MainStoryboard</string>
 </dict>
 </plist>
