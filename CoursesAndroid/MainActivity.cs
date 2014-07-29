@@ -59,7 +59,10 @@ namespace CoursesAndroid
         {
             textTitle.Text = courseManager.Current.Title;
             textDescription.Text = courseManager.Current.Description;
-            imageCourse.SetImageResource(Resource.Drawable.ps_top_card_02);
+            imageCourse.SetImageResource(ResourceHelper.TranslateDrawable(courseManager.Current.Image));
+
+            buttonNext.Enabled = courseManager.CanMoveNext;
+            buttonPrev.Enabled = courseManager.CanMovePrev;
         }
 
     }

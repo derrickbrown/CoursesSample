@@ -78,5 +78,17 @@ namespace CoursesLibrary
         {
             get { return courses[currentIndex]; }
         }
+
+        public bool CanMovePrev 
+        {
+            get { return currentIndex > 0; }
+        }
+
+        public bool CanMoveNext
+        {
+            get { return currentIndex < courses.Length -1; }
+        }
+
     }
+
 }

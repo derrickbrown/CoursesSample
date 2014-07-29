@@ -71,6 +71,24 @@
     <ConsolePause>False</ConsolePause>
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug iOS|iPhoneSimulator'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\iPhoneSimulator\Debug iOS\</OutputPath>
+    <DefineConstants>__IOS__;__MOBILE__;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug iOS|iPhone'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\iPhone\Debug iOS\</OutputPath>
+    <DefineConstants>__IOS__;__MOBILE__;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -103,6 +121,12 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\ps_top_card_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoursesLibrary\CoursesLibrary.csproj">
+      <Project>{ad019710-74cb-48f9-ac73-a0508e7860fe}</Project>
+      <Name>CoursesLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
 </Project>

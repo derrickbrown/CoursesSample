@@ -1,7 +1,7 @@
 ﻿
 using System;
 using System.Drawing;
-
+using CoursesLibrary;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
@@ -9,8 +9,12 @@ namespace CoursesiOS
 {
 	public partial class CourseViewController : UIViewController
 	{
+
+	    private CourseManager courseManager;
+
 		public CourseViewController () : base ("CourseViewController", null)
 		{
+            courseManager = new CourseManager();
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -28,22 +32,30 @@ namespace CoursesiOS
             buttonPrev.TouchUpInside += ButtonPrevOnTouchUpInside;
             buttonNext.TouchUpInside += buttonNext_TouchUpInside;
 
+            courseManager.MoveFirst();
+            UpdateUI();
 		}
 
         private void ButtonPrevOnTouchUpInside(object sender, EventArgs eventArgs)
         {
-            labelTitle.Text = "Prev Clicked";
-            textDescription.Text = "The previous button has been clicked!";
-            imageCourse.Image = UIImage.FromBundle("ps_top_card_01");
-
+            courseManager.MovePrev();
+            UpdateUI();
         }
 
         void buttonNext_TouchUpInside(object sender, EventArgs e)
         {
-            labelTitle.Text = "Next Clicked";
-            textDescription.Text = "The next button has been clicked!";
-            imageCourse.Image = UIImage.FromBundle("ps_top_card_02");
+            courseManager.MoveNext();
+            UpdateUI();
         }
+
+	    private void UpdateUI()
+	    {
+	        labelTitle.Text = courseManager.Current.Title;
+	        textDescription.Text = courseManager.Current.Description;
+            imageCourse.Image = UIImage.FromBundle(courseManager.Current.Image);
+	        buttonNext.Enabled = courseManager.CanMoveNext;
+	        buttonPrev.Enabled = courseManager.CanMovePrev;
+	    }
 
 	}
 }
