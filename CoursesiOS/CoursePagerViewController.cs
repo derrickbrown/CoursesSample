@@ -33,7 +33,7 @@ namespace CoursesiOS
             base.ViewDidLoad();
 
             // Perform any additional setup after loading the view
-            _pageViewController = new UIPageViewController(UIPageViewControllerTransitionStyle.PageCurl, 
+            _pageViewController = new UIPageViewController(UIPageViewControllerTransitionStyle.PageCurl,
                 UIPageViewControllerNavigationOrientation.Horizontal,
                 UIPageViewControllerSpineLocation.Min);
 
@@ -43,66 +43,13 @@ namespace CoursesiOS
             _courseManager = new CourseManager();
             _courseManager.MoveFirst();
 
-            var firstCourseViewController = CreateCoursesViewController();
+            var dataSource = new CoursePagerViewControllerDataSource(_courseManager);
+            _pageViewController.DataSource = dataSource;
 
-            _pageViewController.SetViewControllers(new UIViewController[] {firstCourseViewController}, 
+            _pageViewController.SetViewControllers(new UIViewController[] {dataSource.GetFirstViewController()},
                 UIPageViewControllerNavigationDirection.Forward,
                 false, null);
 
-            _pageViewController.GetNextViewController = GetNextViewController;
-            _pageViewController.GetPreviousViewController = GetPreviousViewController;
         }
-
-        public CourseViewController CreateCoursesViewController()
-        {
-            var courseViewController = new CourseViewController();
-            courseViewController.Course = _courseManager.Current;
-            courseViewController.CoursePosition = _courseManager.CurrentPosition;
-
-            return courseViewController;
-        }
-
-        public UIViewController GetNextViewController(UIPageViewController pageViewController,
-            UIViewController referenceViewController)
-        {
-            CourseViewController returnCourseViewController = null;
-
-            var referenceCourseViewController 
-                = referenceViewController as CourseViewController;
-
-            if (referenceCourseViewController != null)
-            {
-                _courseManager.MoveTo(referenceCourseViewController.CoursePosition);
-                if (_courseManager.CanMoveNext)
-                {
-                    _courseManager.MoveNext();
-                    returnCourseViewController = CreateCoursesViewController();
-                }
-            }
-
-            return returnCourseViewController;
-        }
-
-        public UIViewController GetPreviousViewController(UIPageViewController pageViewController,
-            UIViewController referenceViewController)
-        {
-            CourseViewController returnCourseViewController = null;
-
-            var referenceCourseViewController
-                = referenceViewController as CourseViewController;
-
-            if (referenceCourseViewController != null)
-            {
-                _courseManager.MoveTo(referenceCourseViewController.CoursePosition);
-                if (_courseManager.CanMovePrev)
-                {
-                    _courseManager.MovePrev();
-                    returnCourseViewController = CreateCoursesViewController();
-                }
-            }
-
-            return returnCourseViewController;
-        }
-
     }
 }
