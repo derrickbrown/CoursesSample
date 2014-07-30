@@ -871,11 +871,14 @@ namespace CoursesAndroid
 			// aapt resource value: 0x7f050011
 			public const int beginning = 2131034129;
 			
-			// aapt resource value: 0x7f050041
-			public const int buttonNext = 2131034177;
+			// aapt resource value: 0x7f050043
+			public const int buttonNext = 2131034179;
 			
-			// aapt resource value: 0x7f050040
-			public const int buttonPrev = 2131034176;
+			// aapt resource value: 0x7f050042
+			public const int buttonPrev = 2131034178;
+			
+			// aapt resource value: 0x7f05003e
+			public const int categoryDrawerListView = 2131034174;
 			
 			// aapt resource value: 0x7f05002d
 			public const int checkbox = 2131034157;
@@ -883,8 +886,8 @@ namespace CoursesAndroid
 			// aapt resource value: 0x7f05000d
 			public const int collapseActionView = 2131034125;
 			
-			// aapt resource value: 0x7f05003c
-			public const int coursePager = 2131034172;
+			// aapt resource value: 0x7f05003d
+			public const int coursePager = 2131034173;
 			
 			// aapt resource value: 0x7f050028
 			public const int default_activity_button = 2131034152;
@@ -894,6 +897,9 @@ namespace CoursesAndroid
 			
 			// aapt resource value: 0x7f050008
 			public const int disableHome = 2131034120;
+			
+			// aapt resource value: 0x7f05003c
+			public const int drawerLayout = 2131034172;
 			
 			// aapt resource value: 0x7f05000f
 			public const int dropdown = 2131034127;
@@ -925,8 +931,8 @@ namespace CoursesAndroid
 			// aapt resource value: 0x7f050027
 			public const int image = 2131034151;
 			
-			// aapt resource value: 0x7f05003d
-			public const int imageCourse = 2131034173;
+			// aapt resource value: 0x7f05003f
+			public const int imageCourse = 2131034175;
 			
 			// aapt resource value: 0x7f050001
 			public const int listMode = 2131034113;
@@ -1006,11 +1012,11 @@ namespace CoursesAndroid
 			// aapt resource value: 0x7f050002
 			public const int tabMode = 2131034114;
 			
-			// aapt resource value: 0x7f05003f
-			public const int textDescription = 2131034175;
+			// aapt resource value: 0x7f050041
+			public const int textDescription = 2131034177;
 			
-			// aapt resource value: 0x7f05003e
-			public const int textTitle = 2131034174;
+			// aapt resource value: 0x7f050040
+			public const int textTitle = 2131034176;
 			
 			// aapt resource value: 0x7f05002b
 			public const int title = 2131034155;
@@ -1132,13 +1138,16 @@ namespace CoursesAndroid
 			public const int CourseActivity = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int CourseFragment = 2130903065;
+			public const int CourseCategoryItem = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int Main = 2130903066;
+			public const int CourseFragment = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int support_simple_spinner_dropdown_item = 2130903067;
+			public const int Main = 2130903067;
+			
+			// aapt resource value: 0x7f03001c
+			public const int support_simple_spinner_dropdown_item = 2130903068;
 			
 			static Layout()
 			{
