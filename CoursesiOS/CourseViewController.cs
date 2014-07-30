@@ -10,11 +10,14 @@ namespace CoursesiOS
 	public partial class CourseViewController : UIViewController
 	{
 
-	    private CourseManager courseManager;
+	    //private CourseManager courseManager;
+
+        public Course Course { get; set; }
+        public int CoursePosition { get; set; }
 
 		public CourseViewController () : base ("CourseViewController", null)
 		{
-            courseManager = new CourseManager();
+            //courseManager = new CourseManager();
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -28,35 +31,34 @@ namespace CoursesiOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-		
-            buttonPrev.TouchUpInside += ButtonPrevOnTouchUpInside;
-            buttonNext.TouchUpInside += buttonNext_TouchUpInside;
 
-            courseManager.MoveFirst();
+		    buttonNext.Hidden = true;
+		    buttonPrev.Hidden = true;
+            //buttonPrev.TouchUpInside += ButtonPrevOnTouchUpInside;
+            //buttonNext.TouchUpInside += buttonNext_TouchUpInside;
+
+            //courseManager.MoveFirst();
             UpdateUI();
 		}
 
-        private void ButtonPrevOnTouchUpInside(object sender, EventArgs eventArgs)
-        {
-            courseManager.MovePrev();
-            UpdateUI();
-        }
+        //private void ButtonPrevOnTouchUpInside(object sender, EventArgs eventArgs)
+        //{
+        //    courseManager.MovePrev();
+        //    UpdateUI();
+        //}
 
-        void buttonNext_TouchUpInside(object sender, EventArgs e)
-        {
-            courseManager.MoveNext();
-            UpdateUI();
-        }
+        //void buttonNext_TouchUpInside(object sender, EventArgs e)
+        //{
+        //    courseManager.MoveNext();
+        //    UpdateUI();
+        //}
 
 	    private void UpdateUI()
 	    {
-	        labelTitle.Text = courseManager.Current.Title;
-	        textDescription.Text = courseManager.Current.Description;
-            imageCourse.Image = UIImage.FromBundle(courseManager.Current.Image);
-	        buttonNext.Enabled = courseManager.CanMoveNext;
-	        buttonPrev.Enabled = courseManager.CanMovePrev;
+            labelTitle.Text = Course.Title;
+            textDescription.Text = Course.Description;
+            imageCourse.Image = UIImage.FromBundle(Course.Image);
 	    }
-
 	}
 }
 

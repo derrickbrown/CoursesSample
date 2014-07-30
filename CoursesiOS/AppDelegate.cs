@@ -21,14 +21,13 @@ namespace CoursesiOS
             set;
         }
 
-		CourseViewController viewController;
+        CoursePagerViewController viewController;
 
-        //
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
 			Window = new UIWindow (UIScreen.MainScreen.Bounds);
 
-			viewController = new CourseViewController ();
+			viewController = new CoursePagerViewController ();
 		    Window.RootViewController = viewController;
 			Window.MakeKeyAndVisible ();
 
