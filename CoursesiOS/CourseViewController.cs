@@ -32,11 +32,6 @@ namespace CoursesiOS
 		{
 			base.ViewDidLoad ();
 
-		    buttonNext.Hidden = true;
-		    buttonPrev.Hidden = true;
-            //buttonPrev.TouchUpInside += ButtonPrevOnTouchUpInside;
-            //buttonNext.TouchUpInside += buttonNext_TouchUpInside;
-
             //courseManager.MoveFirst();
             UpdateUI();
 		}
