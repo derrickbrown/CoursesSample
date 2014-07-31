@@ -90,6 +90,8 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CategoryViewController.cs" />
+    <Compile Include="CategoryViewSource.cs" />
     <Compile Include="CoursePagerViewController.cs" />
     <Compile Include="CoursePagerViewControllerDataSource.cs" />
     <Compile Include="Main.cs" />

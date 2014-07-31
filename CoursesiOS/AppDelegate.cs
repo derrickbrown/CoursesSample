@@ -15,24 +15,25 @@ namespace CoursesiOS
     {
         // class-level declarations
 
-        public override UIWindow Window
-        {
-            get;
-            set;
-        }
+        public override UIWindow Window { get; set; }
 
-        CoursePagerViewController viewController;
+        public UINavigationController RootNavigationController { get; private set; }
 
-		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+
+
+        public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
 			Window = new UIWindow (UIScreen.MainScreen.Bounds);
+            RootNavigationController = new UINavigationController();
 
-			viewController = new CoursePagerViewController ();
-		    Window.RootViewController = viewController;
+			var viewController = new CategoryViewController(); 
+            RootNavigationController.PushViewController(viewController, false);
+
+
+		    Window.RootViewController = RootNavigationController;
 			Window.MakeKeyAndVisible ();
 
 			return true;
-
 		}
 
         // This method is invoked when the application is about to move from active to inactive state.
